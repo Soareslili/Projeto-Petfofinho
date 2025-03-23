@@ -63,7 +63,7 @@ export function About() {
 
                             <li className="flex items-center gap-2">
                                 <Check className="text-red-500" />
-                                O cuidados e conforto do seu amiguinho é nossa prioridade.
+                                O cuidado e conforto do seu amiguinho é nossa prioridade.
                             </li>
                         </ul>
 
