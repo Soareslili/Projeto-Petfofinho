@@ -1,11 +1,27 @@
 import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr'
 import dogImg from '../../../public/bg-hero.png'
 import Image from 'next/image'
+import CatImg from '../../../public/cat-hero.png'
 export function Hero() {
+    
     return (
         <section className="bg-[#e84c3d] text-white relative overflow-hidden">
 
-            <div className='container mx-auto py-16 px-4'>
+            <div>
+                <Image
+                src={dogImg}
+                alt='Foto do Cachorro'
+                fill
+                sizes='100vw'
+                priority
+                className='object-cover opacity-60 lg:hidden'
+                />
+
+                <div className='absolute inset-0 bg-black opacity-40 md:hidden '></div>
+
+            </div>
+
+            <div className='container mx-auto pt-16 pb-16 md:pb-0 px-4 relative'>
 
                 <article className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 
@@ -30,14 +46,29 @@ export function Hero() {
                             <p className="text-sm mb-4">
                                 <b className="bg-black text-white px-2 pý-1 rounded-md">5%</b> de desconto na primeira compra.
                             </p>
+
+                            <div className='flex mt-4'>
+                                <div className='w-32 hidden lg:block'>
+                                    <Image
+                                    src={CatImg}
+                                    alt='Foto do Gatinho'
+                                    quality={100}
+                                    className='object-fill'
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div className='hidden md:block h-full relativa'>
+                    <div className='hidden md:block h-full relative'>
                        <Image
                        src={dogImg}
                        alt='Foto do dog'
-                       className='object-fill'
+                       className='object-contain'
+                      fill
+                      sizes='(max-width: 768px) 0vw, 50vw'
+                      quality={100}
+                    
                        />
                     </div>
                 
