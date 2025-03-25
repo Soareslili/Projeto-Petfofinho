@@ -4,6 +4,7 @@ import Whiskas from '../../../public/whiskas.png'
 import natural from '../../../public/natural.png'
 import royal from '../../../public/royal.png'
 import Image from 'next/image'
+import { FacebookLogo, InstagramLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr'
 
 
 const brands = [
@@ -23,33 +24,69 @@ export function Footer() {
             <div className='container mx-auto px-4'>
 
                 <div className='border-b border-white/20 pb-8'>
-                <h4 className='text-3xl font-semibold mb-8 text-center'>Marcas que trabalhamos</h4>
+                    <h4 className='text-3xl font-semibold mb-8 text-center'>Marcas que trabalhamos</h4>
 
-                <div className='grid grid-cols-2 lg:grid-cols-6 gap-4' >
-                    {brands.map((item, index) => (
-                        <div key={index} className='bg-white p-4 rounded-lg flex items-center justify-center'>
-                            <Image
-                                src={item.logo}
-                                alt={item.name}
-                                width={100}
-                                height={50}
-                                quality={100}
-                                style={{
-                                    width: "auto",
-                                    height: "auto",
-                                }}
-                                className='object-contain' />
+                    <div className='grid grid-cols-2 lg:grid-cols-6 gap-8' >
+                        {brands.map((item, index) => (
+                            <div key={index} className='bg-white p-4 rounded-lg flex items-center justify-center'>
+                                <Image
+                                    src={item.logo}
+                                    alt={item.name}
+                                    width={100}
+                                    height={50}
+                                    quality={100}
+                                    style={{
+                                        width: "auto",
+                                        height: "auto",
+                                    }}
+                                    className='object-contain' />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <footer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-5'>
+                    <div>
+                        <h3 className='text-2xl font-semibold mb-4'>Pet Shop Fofinho</h3>
+                        <p className='mb-4'>Cuidando do seu melhor amigo com muito amor e dedicação.</p>
+                        <a target='_blank'
+                            href={'https://wa.me/556899998899?text=Olá vim pelo site e gostaria de mais informações'}
+                            className='bg-green-500 px-4 py-2 rounded-md mt-3'>
+                            Contato via WhatsApp
+                        </a>
+                    </div>
+
+                    <div>
+                        <h3 className='text-2xl font-semibold mb-2'>Contatos</h3>
+                        <p>Email: teste@teste.com</p>
+                        <p>Telefone: (xx) 12312346789</p>
+                        <p>Rua X, centro, São Paulo| SP</p>
+                    </div>
+
+                    <div>
+                        <h3 className='text-2xl font-semibold mb-2'>Redes Socias</h3>
+                        <div className='flex gap-4'>
+                            <a href="#"
+                                target='_black'
+                            >
+                                <FacebookLogo className='w-8 h-8' />
+                            </a>
+
+                            <a href="#"
+                                target='_black'
+                            >
+                                <InstagramLogo className='w-8 h-8' />
+                            </a>
+
+                            <a href="#"
+                                target='_black'
+                            >
+                                <YoutubeLogo className='w-8 h-8' />
+                            </a>
                         </div>
-                    ))}
-                </div>
+                    </div>
+
+                </footer>
             </div>
-            <footer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-5'>
-                <div>
-                    <h3 className='text-2xl font-semibold mb-2'>Pet Shop Fofinho</h3>
-                    <p>Cuidando do seu melhor amigo com muito amor e dedicação.</p>
-                </div>
-            </footer>
-        </div>
 
         </section >
     )
